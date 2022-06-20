@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --blue: #2196f3;
   --anim-blue: #188ce8;
@@ -7,6 +17,7 @@
   --white-normal: #eeeeee;
   --grey: #757575;
   --grey-normal: #f5f4fa;
+  --header-line: #ececec;
 }
 
 body {
@@ -15,6 +26,38 @@ body {
   color: var(--grey);
   font-size: 14px;
   letter-spacing: 0.03em;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .visually-hidden {
@@ -36,6 +79,8 @@ body {
 
 .list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .logo,
@@ -68,6 +113,8 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--blue);
+  margin-right: 93px;
+  display: flex;
 }
 
 .logo-accent-header {
@@ -78,13 +125,33 @@ body {
   color: var(--white);
 }
 
-/* Страница Студия*/
+/* Хедер*/
+
+.header-container {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--header-line);
+}
+
+.site-nav {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .nav-link a {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--black);
+  display: flex;
+}
+
+li.nav-link.list:not(:last-child) {
+  margin-right: 50px;
 }
 
 .nav-link-active a {
@@ -99,11 +166,27 @@ body {
   color: var(--grey);
 }
 
+.site-auth {
+  display: flex;
+}
+
+a.site-auth-link {
+  margin-left: 50px;
+}
+
+.header-group {
+  margin-left: auto;
+}
+
+/* Секция герой*/
+
 .hero {
   background: var(--black-normal);
+  margin-bottom: 94px;
 }
 
 .hero-title {
+  padding: 0 124px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -123,16 +206,34 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
+
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-button:hover,
-.hero-button:focus{
+.hero-button:focus {
   background-color: var(--anim-blue);
   box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+/* Почему стоит выбрать нас */
+
+.features {
+  margin-bottom: 94px;
+}
+
+.features-list {
+  display: flex;
+}
+
+.features-list-item:not(:first-child) {
+  margin-left: 30px;
 }
 
 .features-list-title {
@@ -144,18 +245,47 @@ body {
 }
 
 .features-list-description {
+  margin-top: 10px;
   line-height: 1.7;
   color: var(--grey);
 }
 
-.our-work-title,
+/* Почему стоит выбрать нас */
+
+.our-work {
+  margin-bottom: 94px;
+}
+
+.our-work-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 50px;
+}
+
+.our-work-list {
+  display: flex;
+}
+
+.our-work-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/* Наша команда */
+
+.team-list {
+  display: flex;
+}
+
 .our-team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   color: var(--black);
-  margin: 0;
+  margin-bottom: 50px;
   padding: 0;
 }
 
@@ -163,8 +293,14 @@ body {
   background-color: var(--grey-normal);
 }
 
+.team-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .team-list-item {
   background-color: var(--white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-member-title {
@@ -173,6 +309,8 @@ body {
   line-height: 1.9;
   text-align: center;
   color: var(--black);
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .team-member-position {
@@ -180,10 +318,14 @@ body {
   line-height: 1.9;
   text-align: center;
   color: var(--grey);
+  margin-bottom: 30px;
 }
+
+/* Футер */
 
 .page-footer {
   background-color: var(--black-normal);
+  padding: 60px 0;
 }
 
 .footer-list-link,
@@ -199,7 +341,6 @@ body {
 .footer-list-address-link {
   color: var(--white);
 }
-
 
 /* Страница портфолио */
 .filter-button {
