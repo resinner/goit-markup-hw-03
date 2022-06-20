@@ -30,7 +30,7 @@ body {
 
 ul {
   padding-inline-start: 0;
-  list-style: 0;
+  list-style: none;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -299,26 +299,29 @@ a.site-auth-link {
 
 .team-list-item {
   background-color: var(--white);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.team-member-description {
+padding: 30px 10px;
 }
 
 .team-member-title {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.17;
   text-align: center;
   color: var(--black);
-  margin-top: 30px;
   margin-bottom: 10px;
 }
 
 .team-member-position {
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.17;
   text-align: center;
   color: var(--grey);
-  margin-bottom: 30px;
 }
 
 /* Футер */
@@ -343,6 +346,17 @@ a.site-auth-link {
 }
 
 /* Страница портфолио */
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-list-item:not(:last-child) {
+  margin-right: 8px;
+}
+
 .filter-button {
   font-weight: 500;
   font-size: 16px;
@@ -354,6 +368,7 @@ a.site-auth-link {
   color: var(--black);
   cursor: pointer;
   font-family: inherit;
+  padding: 6px 22px;
 }
 
 .filter-button:hover,
@@ -362,19 +377,31 @@ a.site-auth-link {
   color: var(--white);
 }
 
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project-list-item {
+  border: 1px solid var(--white-normal);
+  flex-basis: 370px;
+}
+
+.list-item-description {
+  margin: 20px 24px;
+}
+
 .project-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--black);
+  margin-bottom: 4px;
 }
 
 .project-type {
   font-size: 16px;
   line-height: 1.88;
-}
-
-.project-list-item {
-  border: 1px solid var(--white-normal);
 }
